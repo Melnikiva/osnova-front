@@ -10,5 +10,6 @@
   ],
   "compilerOptions": {
     "types": ["naive-ui/volar"]
-  }
+  },
+  "strict": true,
 }
