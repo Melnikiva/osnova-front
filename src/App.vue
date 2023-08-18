@@ -7,7 +7,7 @@ import { appTheme } from '@/theme';
 
 <template>
   <n-config-provider :theme-overrides="appTheme">
-    <Header></Header>
+    <AppHeader></AppHeader>
     <RouterView />
   </n-config-provider>
 </template>

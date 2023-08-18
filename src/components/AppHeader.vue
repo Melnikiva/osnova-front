@@ -2,15 +2,15 @@
 import { ref } from 'vue';
 import { NLayoutHeader, NAvatar, NButton, NSpace } from 'naive-ui';
 
-let inverted = ref<boolean>();
+let testSwitch = ref<boolean>();
 </script>
 
 <template>
-    <n-layout-header class="header padding-small" :bordered="inverted">
+    <n-layout-header class="header padding-small">
         <n-space align="center">
             <!-- TODO: change logo to vector image -->
             <n-avatar round :size="64" src="src/assets/img/osnova-logo.jpg" />
-            <n-button type="primary" @click="inverted = !inverted">Switch</n-button>
+            <n-button type="primary" @click="testSwitch = !testSwitch">Switch</n-button>
         </n-space>
     </n-layout-header>
 </template>
