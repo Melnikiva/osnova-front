@@ -1,29 +1,16 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import AppHeader from './components/AppHeader.vue';
+import { NConfigProvider } from 'naive-ui';
+import { appTheme } from '@/theme';
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <n-space>
-          <n-button type="primary" @click="$router.push('/')">Home</n-button>
-          <n-button type="warning" @click="$router.push('/about')">About</n-button>
-        </n-space>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <n-config-provider :theme-overrides="appTheme">
+    <Header></Header>
+    <RouterView />
+  </n-config-provider>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { NButton, NSpace } from 'naive-ui'
-
-export default defineComponent({
-    components: {
-      NButton
-    }
-  })
 </script>
