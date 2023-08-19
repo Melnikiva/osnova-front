@@ -1,4 +1,4 @@
-name: tg-notify
+name: review
 on: 
   push:
     branches:
@@ -29,6 +29,8 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: The commit was failed to push by ${{ github.actor }} due to issue with "lint"
   update:
+    needs: [lint]
+    name: Update status
     runs-on: ubuntu-latest
     steps:
     - name: Update in telegram
