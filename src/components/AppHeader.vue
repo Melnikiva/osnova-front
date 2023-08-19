@@ -1,30 +1,59 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import { NLayoutHeader, NAvatar, NButton, NSpace } from 'naive-ui';
+<script setup lang='ts'>
+import {ref, type Ref} from 'vue'
+import {NLayoutHeader, NAvatar, NGrid, NGi, NH3, NP, NMenu} from 'naive-ui';
+import {MenuOptions} from '@/options/menu.ts'
 
-let testSwitch = ref<boolean>();
+const activeKey: Ref<string | null> = ref(null)
 </script>
 
 <template>
-    <n-layout-header class="header padding-small">
-        <n-space align="center">
-            <!-- TODO: change logo to vector image -->
-            <n-avatar round :size="64" src="src/assets/img/osnova-logo.jpg" />
-            <n-button type="primary" @click="testSwitch = !testSwitch">Switch</n-button>
-        </n-space>
-    </n-layout-header>
+  <NLayoutHeader>
+    <header class='container header'>
+      <n-grid x-gap='12' :cols='12'>
+        <n-gi :span='1'>
+          <n-avatar class='header__logo' round :size='64' src='src/assets/img/osnova-logo.jpg'/>
+        </n-gi>
+        <n-gi :span='9'>
+          <n-menu v-model:value='activeKey' mode='horizontal' :options='MenuOptions' :indent='12'></n-menu>
+        </n-gi>
+        <n-gi :span='2'>
+          <div class='header__contact'>
+            <n-h3>Зв'яжіться з нами</n-h3>
+            <n-p>099 322 14 88</n-p>
+          </div>
+        </n-gi>
+      </n-grid>
+    </header>
+  </NLayoutHeader>
 </template>
 
-<style>
+
+<style lang='scss' scoped>
 .header {
-    color: white;
-}
-
-n-avatar {
-    padding: 0;
-}
-
-.padding-small {
-    padding: 4px;
+  padding: 0 10px;
+  font-family: 'Ubuntu', sans-serif;
+  color: lightcyan;
+  &__logo {
+    margin: 10px 0;
+  }
+  &__nav {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100%;
+  }
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    h3 {
+      margin-bottom: 8px;
+    }
+    p {
+      margin: 0;
+    }
+  }
 }
 </style>
