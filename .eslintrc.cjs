@@ -1,4 +1,4 @@
-/* eslint-env node */
+/* eslint-disable no-undef */
 require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
@@ -10,6 +10,7 @@ module.exports = {
     '@vue/eslint-config-prettier/skip-formatting',
     'plugin:json/recommended',
   ],
+  'parser': 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest'
   },
