@@ -1,7 +1,8 @@
 <script setup lang='ts'>
-import {ref, type Ref} from 'vue'
-import {NLayoutHeader, NAvatar, NGrid, NGi, NH3, NText, NMenu} from 'naive-ui';
-import {MenuOptions} from '@/options/menu'
+import {ref, type Ref} from 'vue';
+import {NLayoutHeader, NAvatar, NGrid, NGi, NH3, NP, NMenu} from 'naive-ui';
+import {MenuOptions} from '@/options/menu';
+import logoUrl from '@/assets/img/osnova-logo.jpg';
 
 const activeKey: Ref<string | null> = ref(null)
 </script>
@@ -11,8 +12,7 @@ const activeKey: Ref<string | null> = ref(null)
     <header class='container header'>
       <n-grid x-gap='12' :cols='12'>
         <n-gi :span='1'>
-          <n-avatar @click='$router.push({name: "Home"})' class='header__logo' round :size='64'
-            src='src/assets/img/osnova-logo.jpg' />
+          <n-avatar class='header__logo' id="logo" round :size='64' :src="logoUrl" />
         </n-gi>
         <n-gi :span='9'>
           <n-menu v-model:value='activeKey' mode='horizontal' :options='MenuOptions' class='header__nav'

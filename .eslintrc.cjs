@@ -10,8 +10,12 @@ module.exports = {
     '@vue/eslint-config-prettier/skip-formatting',
     'plugin:json/recommended',
   ],
+  rules: {
+    'vue/comment-directive': 'off',
+  },
   parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest',
   },
+  ignorePatterns: ['dist'],
 };
