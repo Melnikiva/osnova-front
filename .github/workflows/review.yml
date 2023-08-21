@@ -19,8 +19,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16.15.1
-      - run: yarn install
-      - run: yarn lint
+      - run: npm install
+      - run: npm run lint
       - name: Failed to lint
         if: ${{ failure() }}
         uses: appleboy/telegram-action@master
