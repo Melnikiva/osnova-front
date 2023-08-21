@@ -15,12 +15,13 @@ const activeKey: Ref<string | null> = ref(null)
           <n-avatar class='header__logo' id="logo" round :size='64' :src="logoUrl" />
         </n-gi>
         <n-gi :span='9'>
-          <n-menu v-model:value='activeKey' mode='horizontal' :options='MenuOptions' :indent='12'></n-menu>
+          <n-menu v-model:value='activeKey' mode='horizontal' :options='MenuOptions' class='header__nav'
+            :indent='12'></n-menu>
         </n-gi>
         <n-gi :span='2'>
           <div class='header__contact'>
-            <n-h3>Зв'яжіться з нами</n-h3>
-            <n-p>099 322 14 88</n-p>
+            <n-h3 type='warning'>Зв'яжіться з нами</n-h3>
+            <n-text>099 322 14 88</n-text>
           </div>
         </n-gi>
       </n-grid>
@@ -37,12 +38,11 @@ const activeKey: Ref<string | null> = ref(null)
 
   &__logo {
     margin: 10px 0;
+    cursor: pointer;
   }
 
   &__nav {
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
+    align-items: center;
     height: 100%;
   }
 
@@ -55,10 +55,11 @@ const activeKey: Ref<string | null> = ref(null)
 
     h3 {
       margin-bottom: 8px;
+      color: #fff;
     }
 
-    p {
-      margin: 0;
+    span {
+      color: #fff;
     }
   }
 }
