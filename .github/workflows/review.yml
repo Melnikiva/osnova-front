@@ -41,4 +41,5 @@ jobs:
           message:
             | #https://help.github.com/en/actions/reference/contexts-and-expression-syntax-for-github-actions#github-context
             New ${{ github.event_name }} commit in ${{ github.ref }} branch by "${{ github.actor }}".
+            Latest commit: "${{ github.event.head_commit.message }}".
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
