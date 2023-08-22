@@ -1,12 +1,7 @@
-
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
 
 <template>
-    <div>
-        Buy
-    </div>
+  <div>Buy</div>
 </template>
 
 <style lang="scss" scoped></style>

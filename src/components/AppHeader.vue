@@ -1,26 +1,31 @@
-<script setup lang='ts'>
-import {ref, type Ref} from 'vue';
-import {NLayoutHeader, NAvatar, NGrid, NGi, NH3, NP, NMenu} from 'naive-ui';
-import {MenuOptions} from '@/options/menu';
+<script setup lang="ts">
+import { ref, type Ref } from 'vue';
+import { NLayoutHeader, NAvatar, NGrid, NGi, NH3, NMenu } from 'naive-ui';
+import { MenuOptions } from '@/options/menu';
 import logoUrl from '@/assets/img/osnova-logo.jpg';
 
-const activeKey: Ref<string | null> = ref(null)
+const activeKey: Ref<string | null> = ref(null);
 </script>
 
 <template>
   <NLayoutHeader>
-    <header class='container header'>
-      <n-grid x-gap='12' :cols='12'>
-        <n-gi :span='1'>
-          <n-avatar class='header__logo' id="logo" round :size='64' :src="logoUrl" />
+    <header class="container header">
+      <n-grid x-gap="12" :cols="12">
+        <n-gi :span="1">
+          <n-avatar class="header__logo" id="logo" round :size="64" :src="logoUrl" />
         </n-gi>
-        <n-gi :span='9'>
-          <n-menu v-model:value='activeKey' mode='horizontal' :options='MenuOptions' class='header__nav'
-            :indent='12'></n-menu>
+        <n-gi :span="9">
+          <n-menu
+            v-model:value="activeKey"
+            mode="horizontal"
+            :options="MenuOptions"
+            class="header__nav"
+            :indent="12"
+          ></n-menu>
         </n-gi>
-        <n-gi :span='2'>
-          <div class='header__contact'>
-            <n-h3 type='warning'>Зв'яжіться з нами</n-h3>
+        <n-gi :span="2">
+          <div class="header__contact">
+            <n-h3 type="warning">Зв'яжіться з нами</n-h3>
             <n-text>099 322 14 88</n-text>
           </div>
         </n-gi>
@@ -29,8 +34,7 @@ const activeKey: Ref<string | null> = ref(null)
   </NLayoutHeader>
 </template>
 
-
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .header {
   padding: 0 10px;
   font-family: 'Ubuntu', sans-serif;
